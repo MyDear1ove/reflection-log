@@ -69,7 +69,7 @@ reflection-log/
 │   ├── entry-format.md           # 八字段判定标准、索引行格式、好坏例子
 │   └── maintenance.md            # 晋升 / 退役 / 合并 / 冲突 / 索引膨胀
 ├── templates/
-│   ├── reflections.md            # 空日志（含索引区与归档区标记）
+│   ├── reflections.md            # 空日志（含索引区与归档索引标记）
 │   └── AGENTS.snippet.md         # 粘进 AGENTS.md 的入口块
 ├── README.md
 └── LICENSE
