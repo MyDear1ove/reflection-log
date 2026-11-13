@@ -1,4 +1,4 @@
-下面整块粘贴进 `~/.dsh/AGENTS.md`（或项目根的 `AGENTS.md`）。
+下面整块粘贴进工作区根目录的 `AGENTS.md`（只对这个项目生效），或 `~/.dsh/AGENTS.md`（对所有项目生效）。二选一，不要两边都放。
 
 ```markdown
 <!-- reflection-rules:begin -->

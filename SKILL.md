@@ -21,7 +21,7 @@ whenToUse: 用户指出你的错误，或说"上次说过/以后别这样"；任
 ## 文件位置
 
 - 日志：`~/.dsh/reflections/reflections.md`（Windows：`C:\Users\<你>\.dsh\reflections\reflections.md`）
-- 常驻块：`~/.dsh/AGENTS.md` 中的 `<!-- reflection-rules:begin -->` 到 `<!-- reflection-rules:end -->`
+- 常驻块：`<!-- reflection-rules:begin -->` 到 `<!-- reflection-rules:end -->` 之间的那几行。**位置按这个顺序找**：当前工作区根目录的 `AGENTS.md` → `~/.dsh/AGENTS.md`。以先找到的那份为准，晋升就写进那份；两份都有时，工作区那份优先，不要往全局再写一遍。
 - 日志不存在 → 用本 skill 的 `templates/reflections.md` 初始化一次（初始化时删掉里面的示例条目 R-0001），并告诉用户一行。
 - 常驻块不存在 → 首次需要晋升时，用 `templates/AGENTS.snippet.md` 建出整块，再写规则；不要只写裸规则。
 

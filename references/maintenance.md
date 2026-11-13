@@ -14,7 +14,7 @@
 
 两步：
 
-1. 在 `~/.dsh/AGENTS.md` 的 `reflection-rules` 块里加一行：
+1. 在**常驻块所在的那份 `AGENTS.md`** 里加一行（位置判定见 `SKILL.md` 的「文件位置」，通常是当前工作区的 `AGENTS.md`，没有才退回 `~/.dsh/AGENTS.md`）：
 
 ```
 - R-0007 报告完成前先跑 build 并贴输出；没跑过就说"未验证"。
