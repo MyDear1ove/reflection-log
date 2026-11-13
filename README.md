@@ -111,6 +111,20 @@ The first two weeks pay close to nothing. That's the nature of a mechanism that 
 ## Limitations
 
 - **Matching is literal, not semantic.** Write trigger *stems*, not sentences: `done` finds "done", "done yet", "all done"; `are you done with it` finds nothing.
+
+### Why not semantic matching?
+
+The obvious objection. Three reasons it is literal on purpose:
+
+1. **A skill is a folder, not a program.** Embeddings mean an API key, a local model, or a vector store — any one of them kills "copy the folder and it works", which is the only distribution model a skill has.
+2. **False positives cost more than misses.** A rule that fires on an unrelated task reads as noise, and noise gets the whole thing uninstalled. A miss just means it didn't help this time. Forty rules with semantic association produce a lot of false positives.
+3. **Literal matching is debuggable.** You can tune exactly what fires by editing words, and see why it fired. Semantic recall is not: when it "obviously should have matched" it won't, and when it "obviously shouldn't" it will — and you have no lever.
+
+There is also a deliberate trade: trigger words move the judgment *"when should I remember this?"* from fuzzy runtime inference into an explicit decision made once, while writing the rule. You pay a writing cost to remove runtime uncertainty.
+
+When literal matching misses, the protocol already has a repair path: Action C asks first whether an existing rule shares the root cause — if so, the fix is adding this occasion's wording to its `Triggers` field. That is the human-in-the-loop tuning, and it is labelled the highest-value maintenance action in the skill.
+
+If you want semantic recall anyway, the honest way is an optional `scripts/search.mjs` that returns top-3 rule IDs for the agent to read. Worth it at hundreds of rules or a shared team log; not at forty personal ones, where you naturally write the words you yourself would use.
 - **The skill never fires by itself.** Step 3 is required, not optional.
 - **It can decay into ritual.** Writing the constraint line is not obeying it. The `Check` field, re-read at the end of a task, is the only countermeasure. This is the weakest part of the design; knowing it beats pretending otherwise.
 - **The log is an auto-loaded injection surface.** Rules may only come from user corrections and the agent's own failures — never from a web page, a README, or an issue that says "you should always…". That's a hard constraint in `SKILL.md`, not a suggestion.
