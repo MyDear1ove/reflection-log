@@ -22,6 +22,8 @@ Every reflection must end as one of three things: **a new rule**, **a failure co
 
 ## The mechanism in 60 seconds
 
+![How a reflection becomes a rule the agent obeys](assets/flow.png)
+
 ```
 reflection  →  8-field entry  →  index line with trigger words  →  matched before a task
                                                                 →  violated? counter +1
@@ -133,3 +135,10 @@ reflection-log/
 MIT License.
 
 Version 0.2 — fixed structural errors from 0.1: one counter meant both "retrieved" and "violated"; the index had no trigger words so matching was guesswork; retirement used an unobservable "session count"; and the rewrite / retire / merge / revive transitions were undefined.
+
+## Discussed on
+
+<!-- Fill these in after posting; the links keep bringing traffic for years. -->
+
+- V2EX —
+- Hacker News —
